@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Statusly</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="app">
+    <!-- 顶部：Logo + 输入框 -->
+    <header class="header">
+      <div class="brand">
+        <img src="icons/icon48.png" alt="" class="brand-icon" />
+        <div class="brand-text">
+          <h1>Statusly</h1>
+          <span>HTTP 状态码速查</span>
+        </div>
+      </div>
+
+      <div class="search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="21" y1="21" x2="16.3" y2="16.3"></line>
+        </svg>
+        <input
+          id="code-input"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          spellcheck="false"
+          maxlength="3"
+          placeholder="输入状态码，如 404"
+          autofocus
+        />
+        <kbd class="kbd">Enter</kbd>
+      </div>
+
+      <!-- 快捷常用码 -->
+      <div class="quick" id="quick"></div>
+    </header>
+
+    <!-- 结果区 -->
+    <section class="result" id="result" aria-live="polite"></section>
+
+    <footer class="footer">
+      数据内置本地 · 无需联网 <span class="dot">·</span> 支持 1xx – 5xx
+    </footer>
+  </main>
+
+  <script src="data/codes.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
